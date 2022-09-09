@@ -64,10 +64,7 @@ export const deleteTodo = createAsyncThunk<
   number,
   { rejectValue: string, state: { todos: TodoState } }
 >("todos/deleteTodo", async (id, { rejectWithValue, getState }) => {
-  console.log(getState);
-  console.log(getState());
   const todo = getState().todos.list.find((todo) => todo.id === id);
-  console.log(2);
   if (todo) {
     const response = await fetch(
       `https://jsonplaceholder.typicode.com/todos/${todo.id}`,
@@ -75,7 +72,6 @@ export const deleteTodo = createAsyncThunk<
         method: "DELETE",
       }
     );
-    console.log(response);
     if (!response.ok) return rejectWithValue("Can't delete todo, server error");
     return todo;
   }
