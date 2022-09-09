@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAppDispatch } from '../../hooks/hooks'
-import { deleteTodo, toggleTodo, postTodo } from '../../store/todosAPI';
+import { deleteTodo, toggleTodo } from '../../store/todosAPI';
 import { Todo } from '../../types/todoTypes'
 
 
@@ -9,10 +9,6 @@ const TodoItem: React.FC<Todo> = (todo) => {
   const id = todo.id;
   const handleButton = () => {
     dispatch(deleteTodo(id))
-  }
-
-  const test = () => {
-    dispatch(postTodo('asd'));
   }
 
   const handleCheckbox = () => {
