@@ -21,7 +21,7 @@ const TodoItem: React.FC<Todo> = (todo) => {
 
   return (
       <label className='todo-item'>
-        <input className='todo-item__checkbox' type="checkbox" id={String(todo.id)} onChange={handleCheckbox}/>
+        <input className='todo-item__checkbox' type="checkbox" id={String(todo.id)} onChange={handleCheckbox} checked={todo.completed}/>
         <h3 className='todo-item__title' >{todo.title}</h3>
         <button className='todo-item__delete' onClick={handleButton}>❌</button>
       </label>
