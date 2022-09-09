@@ -7,7 +7,7 @@ export const getTodos = createAsyncThunk<
   { rejectValue: string }
 >("todos/getTodos", async function (_, { rejectWithValue }) {
   const response = await fetch(
-    "https://jsonplaceholder.typicode.com/todos?userId=1"
+    "https://jsonplaceholder.typicode.com/todos?_limit=15"
   );
   if (!response.ok) return rejectWithValue("Can't get todos, server error");
   return (await response.json()) as Todo[];
