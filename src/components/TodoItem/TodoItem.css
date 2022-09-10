@@ -1,0 +1,57 @@
+.todo-item > * {
+    margin: 5px
+}
+
+.todo-item {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+    margin: 10px auto;
+    width: 90%;
+    height: fit-content;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    overflow: hidden;
+    transition: ease-in 0.1s;
+}
+
+.todo-item::before {
+    width: 4px;
+    height: 100%;
+    display: block;
+    content: "";
+    background-color: blue;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.todo-item__checkbox {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.todo-item__title {
+    flex:auto;
+}
+
+.todo-item__delete {
+    border: none;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.todo-item_done {
+    box-shadow: none;
+    background-color: gray;
+    transition: ease-in 0.1s;
+}
+
+.todo-item_done::before {
+    background-color: black;
+}
