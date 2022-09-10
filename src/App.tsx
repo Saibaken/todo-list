@@ -25,11 +25,12 @@ function App() {
     dispatch(getTodos())
   }, [dispatch])
 
+  if (loading) return <h2>Loading...</h2>
+  if (error) return <h2>Error</h2>
+
   return (
-    <div>
+    <div className='container'>
       <TodoInput value={input} updateValue={updateValue} handleSubmit={handleSubmit}/>
-      {<h2>Loading</h2> && loading}
-      {<h2>Error</h2> && error}
       <TodoList />
     </div>
   );
