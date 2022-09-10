@@ -37,6 +37,8 @@ const todosSlice = createSlice({
         if (toggledTodo) {
           toggledTodo.completed = !toggledTodo.completed;
         }
+        state.error = undefined;
+        state.loading = false;
       })
       .addCase(deleteTodo.fulfilled, (state, action) => {
         state.list = state.list.filter(todo => todo.id !== action.payload.id);
