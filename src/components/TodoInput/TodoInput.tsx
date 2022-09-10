@@ -1,4 +1,5 @@
 import React from 'react'
+import './TodoInput.css'
 
 type TodoInputProps = {
     value: string;
